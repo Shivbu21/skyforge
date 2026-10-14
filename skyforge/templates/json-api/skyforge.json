@@ -1,0 +1,13 @@
+{
+  "bake": false,
+  "broadcast": false,
+  "crons": [],
+  "d1": null,
+  "domain": null,
+  "env": {},
+  "framework": "plain",
+  "kv": "{{name}}-cache",
+  "name": "{{name}}",
+  "queue": null,
+  "r2": null
+}

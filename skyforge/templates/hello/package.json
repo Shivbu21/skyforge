@@ -1,0 +1,1 @@
+{"description":"Plain-PHP app on Cloudflare Workers, scaffolded from the Skyforge hello template.","devDependencies":{"@workersphp/cli":"^0.1.0"},"name":"{{name}}","private":true,"scripts":{"deploy":"skyforge deploy","dev":"php -S localhost:8000"},"version":"0.1.0"}

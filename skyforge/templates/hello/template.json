@@ -1,0 +1,1 @@
+{"badges":["PHP","R2","KV"],"description":"The smallest honest starting point: a plain-PHP page with a JSON time endpoint, a KV-backed visit counter, and an R2-backed file store demo.","framework":"plain","name":"hello","requirements":["Cloudflare account","Workers Paid plan ($5/mo) — free tier CPU is too low for PHP"],"title":"Hello World"}

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skyforge — Deployments</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="mark" aria-hidden="true">▲</span>
+    <div>
+      <h1>Skyforge</h1>
+      <p>PHP on Cloudflare Workers · deployments &amp; storage</p>
+    </div>
+  </div>
+  <div id="conn" class="conn"><span class="pill">checking…</span></div>
+</header>
+
+<main>
+  <section id="connect-panel" class="card hidden">
+    <h2>Connect your Cloudflare account</h2>
+    <p class="muted">Paste an API token to see live R2 storage and D1 databases.
+      The token lives in the dashboard's memory only — it is never written to disk.
+      Create one at <span class="mono">dash.cloudflare.com → My Profile → API Tokens</span>
+      (needs Account: Read, R2: Read, D1: Read).</p>
+    <form id="connect-form">
+      <input id="token" type="password" placeholder="Cloudflare API token" autocomplete="off">
+      <button type="submit">Connect</button>
+    </form>
+    <p id="connect-error" class="error hidden"></p>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <h2>Deployments</h2>
+      <span id="deploy-count" class="muted"></span>
+    </div>
+    <div id="deployments"><p class="muted">loading…</p></div>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <h2>Previews</h2>
+      <span class="muted">unique URLs, production untouched</span>
+    </div>
+    <div id="previews"><p class="muted">loading…</p></div>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <h2>Release history</h2>
+      <select id="history-project" aria-label="project"></select>
+    </div>
+    <div id="history"><p class="muted">pick a project to see its release history.</p></div>
+    <p id="job-status" class="muted hidden"></p>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <h2>Logs</h2>
+      <select id="log-deploy" aria-label="deployment"></select>
+    </div>
+    <p class="muted">Deploy-time records. Cloudflare doesn't keep historical worker logs —
+      for live logs run <span class="mono">skyforge logs --follow</span> in your terminal.</p>
+    <div id="log-view"><p class="muted">pick a deployment to view its recorded log.</p></div>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <h2>Templates</h2>
+      <span class="muted">curated starters that run on this platform</span>
+    </div>
+    <div id="templates"><p class="muted">loading…</p></div>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <h2>R2 storage</h2>
+      <span class="muted">per bucket, last 30 days</span>
+    </div>
+    <div id="r2"><p class="muted">connect your account to see live usage.</p></div>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <h2>D1 databases</h2>
+    </div>
+    <div id="d1"><p class="muted">connect your account to see live databases.</p></div>
+  </section>
+</main>
+
+<footer>
+  <p class="muted">Skyforge is an independent open-source project (MIT). Not affiliated with Cloudflare.
+  Deployment records come from <span class="mono">~/.skyforge/deployments.json</span>.</p>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>

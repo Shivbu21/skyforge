@@ -1,0 +1,1 @@
+{"description":"Laravel app on Cloudflare Workers, scaffolded from the Skyforge laravel-starter template.","devDependencies":{"@workersphp/cli":"^0.1.0"},"name":"{{name}}","private":true,"scripts":{"deploy":"skyforge deploy"},"version":"0.1.0"}
